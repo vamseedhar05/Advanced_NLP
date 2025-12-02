@@ -1,0 +1,54 @@
+{
+  "model_name": "GPT-2 Small (INT8 Quantized - From Scratch)",
+  "total_params": 137025857,
+  "model_memory_mb": 243.70337295532227,
+  "baseline_memory_mb": 486.71197509765625,
+  "memory_reduction_percent": 49.92862608189896,
+  "compression_ratio": 3.988317540543937,
+  "avg_latency_ms": 10.406272649765015,
+  "std_latency_ms": 0.6084935477881647,
+  "accuracy": 0.9453947368421053,
+  "precision_macro": 0.9452978220763979,
+  "recall_macro": 0.9453947368421053,
+  "f1_macro": 0.945306799881102,
+  "precision_per_class": [
+    0.9559055118110236,
+    0.9848246991104134,
+    0.9225389994620764,
+    0.9179220779220779
+  ],
+  "recall_per_class": [
+    0.958421052631579,
+    0.9905263157894737,
+    0.9026315789473685,
+    0.93
+  ],
+  "f1_per_class": [
+    0.957161629434954,
+    0.9876672789294149,
+    0.9124767225325885,
+    0.923921568627451
+  ],
+  "class_names": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "quantization_stats": {
+    "total_layers": 49,
+    "quantized_layers": 49,
+    "original_size_mb": 324.32814025878906,
+    "quantized_size_mb": 81.31953811645508,
+    "compression_ratio": 3.988317540543937,
+    "layer_types": {
+      "Linear": 1,
+      "Conv1D": 48
+    }
+  },
+  "latency_percentiles": {
+    "50": 10.37609577178955,
+    "95": 11.010658740997314,
+    "99": 11.55344009399414
+  }
+}

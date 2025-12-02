@@ -1,0 +1,5 @@
+Model,Memory (MB),Compression,Accuracy (%),Precision (%),Recall (%),F1-Score (%),Avg Latency (ms),Throughput (s/s)
+Baseline (FP32),486.71,1.00x,94.62,94.62,94.62,94.62,8.73,114.48
+INT8 (Scratch),243.70,2.00x,94.54,94.53,94.54,94.53,10.41,96.10
+INT8 (bnb),168.36,2.89x,94.58,94.58,94.58,94.58,29.39,34.02
+NF4 (bnb),127.86,3.81x,94.70,94.70,94.70,94.69,16.66,60.04

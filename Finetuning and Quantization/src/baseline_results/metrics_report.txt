@@ -1,0 +1,27 @@
+================================================================================
+METRICS REPORT: GPT-2 Small (Finetuned Baseline)
+================================================================================
+
+OVERALL METRICS:
+  Accuracy: 0.9462
+  Precision (macro): 0.9462
+  Recall (macro): 0.9462
+  F1 (macro): 0.9462
+
+PER-CLASS METRICS:
+  World: Precision=0.9593, Recall=0.9563, F1=0.9578
+  Sports: Precision=0.9869, Recall=0.9889, F1=0.9879
+  Business: Precision=0.9196, Recall=0.9084, F1=0.9140
+  Sci/Tech: Precision=0.9190, Recall=0.9311, F1=0.9250
+
+CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+       World       0.96      0.96      0.96      1900
+      Sports       0.99      0.99      0.99      1900
+    Business       0.92      0.91      0.91      1900
+    Sci/Tech       0.92      0.93      0.92      1900
+
+    accuracy                           0.95      7600
+   macro avg       0.95      0.95      0.95      7600
+weighted avg       0.95      0.95      0.95      7600

@@ -1,0 +1,35 @@
+================================================================================
+METRICS REPORT: GPT-2 Small (INT8 Quantized - From Scratch)
+================================================================================
+
+OVERALL METRICS:
+  Accuracy: 0.9454
+  Precision (macro): 0.9453
+  Recall (macro): 0.9454
+  F1 (macro): 0.9453
+
+PER-CLASS METRICS:
+  World: Precision=0.9559, Recall=0.9584, F1=0.9572
+  Sports: Precision=0.9848, Recall=0.9905, F1=0.9877
+  Business: Precision=0.9225, Recall=0.9026, F1=0.9125
+  Sci/Tech: Precision=0.9179, Recall=0.9300, F1=0.9239
+
+QUANTIZATION STATISTICS:
+  total_layers: 49
+  quantized_layers: 49
+  original_size_mb: 324.32814025878906
+  quantized_size_mb: 81.31953811645508
+  compression_ratio: 3.988317540543937
+  layer_types: {'Linear': 1, 'Conv1D': 48}
+
+CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+       World       0.96      0.96      0.96      1900
+      Sports       0.98      0.99      0.99      1900
+    Business       0.92      0.90      0.91      1900
+    Sci/Tech       0.92      0.93      0.92      1900
+
+    accuracy                           0.95      7600
+   macro avg       0.95      0.95      0.95      7600
+weighted avg       0.95      0.95      0.95      7600

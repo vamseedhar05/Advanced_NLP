@@ -1,0 +1,5 @@
+{
+  "model_path": "./gpt2_ag_news_finetuned/best_model.pt",
+  "model_name": "GPT-2 Small (Finetuned Baseline)",
+  "accuracy": 0.9461842105263157
+}

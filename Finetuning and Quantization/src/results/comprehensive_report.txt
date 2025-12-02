@@ -1,0 +1,179 @@
+
+====================================================================================================
+COMPREHENSIVE QUANTIZATION COMPARISON REPORT
+GPT-2 Small on AG News Dataset
+====================================================================================================
+
+1. EXECUTIVE SUMMARY
+====================================================================================================
+
+This report compares the performance of different quantization techniques applied to GPT-2 Small
+for text classification on the AG News dataset. The comparison includes:
+  • Baseline: Full-precision (FP32) fine-tuned model
+  • INT8 (Scratch): Custom INT8 quantization implementation
+  • INT8 (bnb): 8-bit quantization using bitsandbytes library
+  • NF4 (bnb): 4-bit NF4 quantization using bitsandbytes library
+
+====================================================================================================
+
+2. DETAILED METRICS COMPARISON
+====================================================================================================
+
+
+Baseline (FP32):
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Efficiency Metrics:
+    • Model Memory:           486.71 MB
+    • Compression Ratio:      1.00x
+    • Memory Reduction:       0.00%
+    • Avg Latency:            8.73 ms
+    • Throughput:             114.48 samples/second
+    
+  Performance Metrics:
+    • Accuracy:               94.62% (Δ -0.00%)
+    • Precision (Macro):      94.62%
+    • Recall (Macro):         94.62%
+    • F1-Score (Macro):       94.62%
+    
+  Per-Class F1-Scores:
+    • World:                  95.78%
+    • Sports:                 98.79%
+    • Business:               91.40%
+    • Sci/Tech:               92.50%
+
+
+INT8 (Scratch):
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Efficiency Metrics:
+    • Model Memory:           243.70 MB
+    • Compression Ratio:      2.00x
+    • Memory Reduction:       49.93%
+    • Avg Latency:            10.41 ms
+    • Throughput:             96.10 samples/second
+    
+  Performance Metrics:
+    • Accuracy:               94.54% (Δ -0.08%)
+    • Precision (Macro):      94.53%
+    • Recall (Macro):         94.54%
+    • F1-Score (Macro):       94.53%
+    
+  Per-Class F1-Scores:
+    • World:                  95.72%
+    • Sports:                 98.77%
+    • Business:               91.25%
+    • Sci/Tech:               92.39%
+
+
+INT8 (bnb):
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Efficiency Metrics:
+    • Model Memory:           168.36 MB
+    • Compression Ratio:      2.89x
+    • Memory Reduction:       65.41%
+    • Avg Latency:            29.39 ms
+    • Throughput:             34.02 samples/second
+    
+  Performance Metrics:
+    • Accuracy:               94.58% (Δ -0.04%)
+    • Precision (Macro):      94.58%
+    • Recall (Macro):         94.58%
+    • F1-Score (Macro):       94.58%
+    
+  Per-Class F1-Scores:
+    • World:                  95.68%
+    • Sports:                 98.82%
+    • Business:               91.28%
+    • Sci/Tech:               92.53%
+
+
+NF4 (bnb):
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Efficiency Metrics:
+    • Model Memory:           127.86 MB
+    • Compression Ratio:      3.81x
+    • Memory Reduction:       73.73%
+    • Avg Latency:            16.66 ms
+    • Throughput:             60.04 samples/second
+    
+  Performance Metrics:
+    • Accuracy:               94.70% (Δ +0.08%)
+    • Precision (Macro):      94.70%
+    • Recall (Macro):         94.70%
+    • F1-Score (Macro):       94.69%
+    
+  Per-Class F1-Scores:
+    • World:                  95.70%
+    • Sports:                 98.82%
+    • Business:               91.65%
+    • Sci/Tech:               92.61%
+
+
+====================================================================================================
+
+3. KEY FINDINGS AND ANALYSIS
+====================================================================================================
+
+
+Best Performance:
+  • Highest Accuracy:       NF4 (bnb) (94.70%)
+  • Lowest Memory:          NF4 (bnb) (127.86 MB)
+  • Lowest Latency:         Baseline (FP32) (8.73 ms)
+
+Trade-off Analysis:
+  • Memory vs Accuracy:     Quantization achieves up to 3.81x compression
+                           with minimal accuracy degradation (≤0.08%)
+  
+  • Speed vs Quality:       All quantized models maintain >90% of baseline accuracy
+                           while reducing memory footprint significantly
+
+
+====================================================================================================
+
+4. RECOMMENDATIONS
+====================================================================================================
+
+Based on the experimental results:
+
+1. For Production Deployment:
+   • If memory is constrained: Use NF4 quantization (highest compression)
+   • If accuracy is critical: Use INT8 quantization (best accuracy-memory trade-off)
+   • If speed is priority: Use INT8-bnb (optimized library implementation)
+
+2. For Research and Development:
+   • Custom quantization (scratch) provides educational value and flexibility
+   • Library-based quantization (bitsandbytes) offers production-ready optimization
+
+3. General Observations:
+   • All quantization methods maintain >90% baseline accuracy
+   • Memory savings range from 2-4x compression
+   • Inference speed improvements depend on hardware and implementation
+
+====================================================================================================
+
+5. TECHNICAL NOTES
+====================================================================================================
+
+Quantization Methods:
+  • INT8 (Scratch):     Symmetric linear quantization, manual implementation
+  • INT8 (bnb):         8-bit quantization with outlier handling (bitsandbytes)
+  • NF4 (bnb):          4-bit NormalFloat quantization (bitsandbytes)
+
+Dataset:
+  • AG News:            4-class news article classification
+  • Train samples:      120,000
+  • Test samples:       7,600
+  • Classes:            World, Sports, Business, Sci/Tech
+
+Model:
+  • Base Model:         GPT-2 Small (124M parameters)
+  • Task:               Text Classification
+  • Max Length:         128 tokens
+
+====================================================================================================
+
+REPORT END
+====================================================================================================

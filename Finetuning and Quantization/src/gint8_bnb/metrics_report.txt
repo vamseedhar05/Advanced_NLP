@@ -1,0 +1,30 @@
+================================================================================
+METRICS REPORT: GPT-2 Small (INT8 - bitsandbytes)
+================================================================================
+
+OVERALL METRICS:
+  Accuracy: 0.9458
+  Precision (macro): 0.9458
+  Recall (macro): 0.9458
+  F1 (macro): 0.9458
+
+PER-CLASS METRICS:
+  World: Precision=0.9588, Recall=0.9547, F1=0.9568
+  Sports: Precision=0.9869, Recall=0.9895, F1=0.9882
+  Business: Precision=0.9189, Recall=0.9068, F1=0.9128
+  Sci/Tech: Precision=0.9186, Recall=0.9321, F1=0.9253
+
+EXTRA INFO:
+  baseline_memory_mb: 486.71197509765625
+
+CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+       World       0.96      0.95      0.96      1900
+      Sports       0.99      0.99      0.99      1900
+    Business       0.92      0.91      0.91      1900
+    Sci/Tech       0.92      0.93      0.93      1900
+
+    accuracy                           0.95      7600
+   macro avg       0.95      0.95      0.95      7600
+weighted avg       0.95      0.95      0.95      7600
